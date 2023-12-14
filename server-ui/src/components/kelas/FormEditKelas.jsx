@@ -14,12 +14,12 @@ function FormEditKelas() {
     useEffect(() => {
         const getKelasId = async() => {
             try {
-                const response = await axios.get(`http://34.192.213.125:8080/api/admin/kelas/${id}`)
+                const response = await axios.get(`http://18.210.63.173:8080/api/admin/kelas/${id}`)
                 setKodeKelas(response.data.data.kodeKelas)
                 setKelas(response.data.data.kelas)
                 setProgramStudi(response.data.data.programStudi)
 
-                const getProgramStudi = await axios.get('http://34.192.213.125:8080/api/admin/program_studi')
+                const getProgramStudi = await axios.get('http://18.210.63.173:8080/api/admin/program_studi')
                 setProgramStudiList(getProgramStudi.data.data)
 
             }catch (error) {
@@ -35,7 +35,7 @@ function FormEditKelas() {
     const updateKelas = async(e) => {
         e.preventDefault()
         try {
-            await axios.put(`http://34.192.213.125:8080/api/admin/kelas/update/${id}`, {
+            await axios.put(`http://18.210.63.173:8080/api/admin/kelas/update/${id}`, {
                 kodeKelas : kodeKelas,
                 kelas : kelas,
                 programStudiId : programStudi

@@ -17,7 +17,7 @@ function FormAddUserDosen() {
     const saveUserDosen = async(e) => {
         e.preventDefault()
         try {
-            await axios.post('http://34.192.213.125:8080/api/admin/user_dosen/create', {
+            await axios.post('http://18.210.63.173:8080/api/admin/user_dosen/create', {
                 nip : nip,
                 nama : nama,
                 email : email,

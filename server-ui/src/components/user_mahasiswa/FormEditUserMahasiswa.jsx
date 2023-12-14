@@ -22,17 +22,17 @@ function FormEditUserMahasiswa() {
         
         const getUserMahasiswaId = async() => {
             try {
-                const response = await axios.get(`http://34.192.213.125:8080/api/admin/user_mahasiswa/${id}`)
+                const response = await axios.get(`http://18.210.63.173:8080/api/admin/user_mahasiswa/${id}`)
                 setNim(response.data.data.nim)
                 setNama(response.data.data.nama)
                 // setProgramStudiId(response.data.data.programStudiId)
                 setProgramStudi(response.data.data.programStudi)
 
 
-                const getProgramStudi = await axios.get('http://34.192.213.125:8080/api/admin/program_studi')
+                const getProgramStudi = await axios.get('http://18.210.63.173:8080/api/admin/program_studi')
                 setProgramStudiList(getProgramStudi.data.data)
 
-                const getKelas = await axios.get('http://34.192.213.125:8080/api/admin/kelas')
+                const getKelas = await axios.get('http://18.210.63.173:8080/api/admin/kelas')
                 setKelasList(getKelas.data.data)
                 // setKelasId(response.data.data.kelasId)
                 setKelas(response.data.data.kelas)
@@ -50,7 +50,7 @@ function FormEditUserMahasiswa() {
     const updateUserMahasiswa = async(e) => {
         e.preventDefault()
         try {
-            await axios.put(`http://34.192.213.125:8080/api/admin/user_mahasiswa/update/${id}`, {
+            await axios.put(`http://18.210.63.173:8080/api/admin/user_mahasiswa/update/${id}`, {
                 nim : nim,
                 nama : nama,
                 programStudiId : programStudi,

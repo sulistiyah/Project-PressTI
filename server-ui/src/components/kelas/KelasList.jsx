@@ -13,7 +13,7 @@ function KelasList() {
 
     const getKelas = async () => {
         try {
-            const response = await axios.get('http://34.192.213.125:8080/api/admin/kelas');
+            const response = await axios.get('http://18.210.63.173:8080/api/admin/kelas');
             console.log('Response:', response.data); // Tambahkan log ini
             setKelas(response.data.data || []);
         } catch (error) {
@@ -24,7 +24,7 @@ function KelasList() {
     const deleteKelas = async (kelasId) => {
         const confirmDelete = window.confirm("Are you sure you want to delete this data?");
         if(confirmDelete) {
-            await axios.delete(`http://34.192.213.125:8080/api/admin/kelas/delete/${kelasId}`)
+            await axios.delete(`http://18.210.63.173:8080/api/admin/kelas/delete/${kelasId}`)
             getKelas()
         }
         

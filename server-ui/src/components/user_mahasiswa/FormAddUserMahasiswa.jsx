@@ -20,11 +20,11 @@ function FormAddUserMahasiswa() {
         const fetchData = async () => {
             try {
                 // Fetch data for Program Studi
-                const responseProgramStudi = await axios.get('http://34.192.213.125:8080/api/admin/program_studi');
+                const responseProgramStudi = await axios.get('http://18.210.63.173:8080/api/admin/program_studi');
                 setProgramStudiList(responseProgramStudi.data.data);
     
                 // Fetch data for Kelas
-                const responseKelas = await axios.get('http://34.192.213.125:8080/api/admin/kelas');
+                const responseKelas = await axios.get('http://18.210.63.173:8080/api/admin/kelas');
                 setKelasList(responseKelas.data.data);
             } catch (error) {
                 if (error.response) {
@@ -40,7 +40,7 @@ function FormAddUserMahasiswa() {
     const saveUserMahasiswa = async(e) => {
         e.preventDefault()
         try {
-            await axios.post('http://34.192.213.125:8080/api/admin/user_mahasiswa/create', {
+            await axios.post('http://18.210.63.173:8080/api/admin/user_mahasiswa/create', {
                 nim : nim,
                 nama : nama,
                 programStudiId : programStudiId,

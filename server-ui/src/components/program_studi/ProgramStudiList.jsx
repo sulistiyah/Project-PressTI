@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import axios from "axios"
 
-// axios.defaults.baseURL = 'http://34.192.213.125:8080/api/admin'
+// axios.defaults.baseURL = 'http://18.210.63.173:8080/api/admin'
 
 function ProgramStudiList() {
 
@@ -15,7 +15,7 @@ function ProgramStudiList() {
 
     const getProgramStudi = async () => {
         try {
-            const response = await axios.get(`http://34.192.213.125:8080/api/admin/program_studi`);
+            const response = await axios.get(`http://18.210.63.173:8080/api/admin/program_studi`);
             console.log('Response:', response.data); // Tambahkan log ini
             setProgramStudi(response.data.data || []);
         } catch (error) {
@@ -26,7 +26,7 @@ function ProgramStudiList() {
     const deleteProgramStudi = async (programStudiId) => {
         const confirmDelete = window.confirm("Are you sure you want to delete this data?");
         if(confirmDelete) {
-            await axios.delete(`http://34.192.213.125:8080/api/admin/program_studi/delete/${programStudiId}`)
+            await axios.delete(`http://18.210.63.173:8080/api/admin/program_studi/delete/${programStudiId}`)
             getProgramStudi()
         }
     }

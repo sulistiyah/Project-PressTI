@@ -12,7 +12,7 @@ function UserDosenList() {
 
     const getUserDosen = async () => {
         try {
-            const response = await axios.get('http://34.192.213.125:8080/api/admin/user_dosen');
+            const response = await axios.get('http://18.210.63.173:8080/api/admin/user_dosen');
             console.log('Response:', response.data); // Tambahkan log ini
             setUserDosen(response.data.data || []);
         } catch (error) {
@@ -23,7 +23,7 @@ function UserDosenList() {
     const deleteUserDosen = async (userDosenId) => {
         const confirmDelete = window.confirm("Are you sure you want to delete this data?");
         if(confirmDelete) {
-            await axios.delete(`http://34.192.213.125:8080/api/admin/user_dosen/delete/${userDosenId}`)
+            await axios.delete(`http://18.210.63.173:8080/api/admin/user_dosen/delete/${userDosenId}`)
             getUserDosen()
         }
     }

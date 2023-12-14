@@ -12,7 +12,7 @@ function SetPresensiList() {
 
     const getSetPresensi = async () => {
         try {
-            const response = await axios.get('http://34.192.213.125:8080/api/admin/set_presensi');
+            const response = await axios.get('http://18.210.63.173:8080/api/admin/set_presensi');
             console.log('Response:', response.data); // Tambahkan log ini
             setSetPresensi(response.data.data || []);
         } catch (error) {
@@ -23,7 +23,7 @@ function SetPresensiList() {
     const deleteSetPresensi = async (setPresensiId) => {
         const confirmDelete = window.confirm("Are you sure you want to delete this data?");
         if(confirmDelete) {
-            await axios.delete(`http://34.192.213.125:8080/api/admin/set_presensi/delete/${setPresensiId}`)
+            await axios.delete(`http://18.210.63.173:8080/api/admin/set_presensi/delete/${setPresensiId}`)
             getSetPresensi()
         }
     }

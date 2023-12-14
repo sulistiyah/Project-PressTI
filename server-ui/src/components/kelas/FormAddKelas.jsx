@@ -16,7 +16,7 @@ function FormAddKelas() {
         const fetchData = async () => {
             try {
                 // Fetch data for Program Studi
-                const responseProgramStudi = await axios.get('http://34.192.213.125:8080/api/admin/program_studi');
+                const responseProgramStudi = await axios.get('http://18.210.63.173:8080/api/admin/program_studi');
                 setProgramStudiList(responseProgramStudi.data.data);
 
             } catch (error) {
@@ -34,7 +34,7 @@ function FormAddKelas() {
     const saveKelas = async(e) => {
         e.preventDefault()
         try {
-            await axios.post('http://34.192.213.125:8080/api/admin/kelas/create', {
+            await axios.post('http://18.210.63.173:8080/api/admin/kelas/create', {
                 kodeKelas : kodeKelas,
                 kelas : kelas,
                 programStudiId : programStudiId

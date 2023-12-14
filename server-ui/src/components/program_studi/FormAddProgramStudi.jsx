@@ -12,7 +12,7 @@ function FormAddProgramStudi() {
     const saveProgramStudi = async(e) => {
         e.preventDefault()
         try {
-            await axios.post('http://34.192.213.125:8080/api/admin/program_studi/create', {
+            await axios.post('http://18.210.63.173:8080/api/admin/program_studi/create', {
                 kodeProdi : kodeProdi,
                 programStudi : programStudi
                 

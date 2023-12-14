@@ -12,7 +12,7 @@ function UserMahasiswaList() {
 
     const getUserMahasiswa = async () => {
         try {
-            const response = await axios.get('http://34.192.213.125:8080/api/admin/user_mahasiswa');
+            const response = await axios.get('http://18.210.63.173:8080/api/admin/user_mahasiswa');
             console.log('Response:', response.data); // Tambahkan log ini
             setUserMahasiswa(response.data.data || []);
         } catch (error) {
@@ -23,7 +23,7 @@ function UserMahasiswaList() {
     const deleteUserMahasiswa = async (userMahasiswaId) => {
         const confirmDelete = window.confirm("Are you sure you want to delete this data?");
         if(confirmDelete) {
-            await axios.delete(`http://34.192.213.125:8080/api/admin/user_mahasiswa/delete/${userMahasiswaId}`)
+            await axios.delete(`http://18.210.63.173:8080/api/admin/user_mahasiswa/delete/${userMahasiswaId}`)
             getUserMahasiswa()
         }
     }

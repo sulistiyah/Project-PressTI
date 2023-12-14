@@ -12,7 +12,7 @@ const initialState = {
 export const LoginAdmin = createAsyncThunk("api/admin/login", async(data, thunkAPI) => {
     try {
         // console.log(data)
-        const response = await axios.post('http://34.192.213.125:8080/api/admin/login', {
+        const response = await axios.post('http://18.210.63.173:8080/api/admin/login', {
             email: data.email,
             password: data.password
         });
@@ -29,7 +29,7 @@ export const LoginAdmin = createAsyncThunk("api/admin/login", async(data, thunkA
 
 export const getMe = createAsyncThunk("api/admin/getMe", async(_, thunkAPI) => {
     try {
-        const response = await axios.get('http://34.192.213.125:8080/api/admin/my_admin');
+        const response = await axios.get('http://18.210.63.173:8080/api/admin/my_admin');
         return response.data;
     } catch (error) {
         if(error.response){
@@ -40,7 +40,7 @@ export const getMe = createAsyncThunk("api/admin/getMe", async(_, thunkAPI) => {
 });
 
 export const LogOut = createAsyncThunk("api/admin/LogOut", async() => {
-    await axios.delete('http://34.192.213.125:8080/api/admin/logout', {
+    await axios.delete('http://18.210.63.173:8080/api/admin/logout', {
         withCredentials: true
     });
 });

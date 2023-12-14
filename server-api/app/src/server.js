@@ -13,7 +13,7 @@ const app = express()
 dotenv.config()
 
 const corsOptions = {
-    origin: 'http://34.192.213.125:3000',
+    origin: 'http://18.210.63.173:3000',
     credentials: true,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
 }
@@ -25,7 +25,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'http://34.192.213.125:3000');
+    res.header('Access-Control-Allow-Origin', 'http://18.210.63.173:3000');
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     res.header('Access-Control-Allow-Credentials', 'true');
@@ -52,10 +52,10 @@ app.get("/", (req, res) => {
 })
 
 
-// const IP = process.env.CLIENT_ORIGIN || "http://34.192.213.125:8080"
+// const IP = process.env.CLIENT_ORIGIN || "http://18.210.63.173:8080"
 const PORT = process.env.PORT || 8080
 app.listen(PORT, () => {
-    console.log(`Server is Running on http://34.192.213.125:${PORT}`)
+    console.log(`Server is Running on http://18.210.63.173:${PORT}`)
 })
 
 

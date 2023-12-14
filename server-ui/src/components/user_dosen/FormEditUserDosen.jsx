@@ -17,7 +17,7 @@ function FormEditUserDosen() {
         
         const getUserDosenId = async() => {
             try {
-                const response = await axios.get(`http://34.192.213.125:8080/api/admin/user_dosen/${id}`)
+                const response = await axios.get(`http://18.210.63.173:8080/api/admin/user_dosen/${id}`)
                 setNip(response.data.data.nip)
                 setNama(response.data.data.nama)
                 setEmail(response.data.data.email)
@@ -35,7 +35,7 @@ function FormEditUserDosen() {
     const updateUserDosen = async(e) => {
         e.preventDefault()
         try {
-            await axios.put(`http://34.192.213.125:8080/api/admin/user_dosen/update/${id}`, {
+            await axios.put(`http://18.210.63.173:8080/api/admin/user_dosen/update/${id}`, {
                 nip : nip,
                 nama : nama,
                 email : email,

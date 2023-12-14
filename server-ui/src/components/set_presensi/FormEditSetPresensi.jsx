@@ -27,20 +27,20 @@ function FormEditSetPresensi() {
         
         const getSetPresensiId = async() => {
             try {
-                const response = await axios.get(`http://34.192.213.125:8080/api/admin/set_presensi/${id}`)
+                const response = await axios.get(`http://18.210.63.173:8080/api/admin/set_presensi/${id}`)
                 setTanggal(response.data.data.tanggal)
                 setJamMulai(response.data.data.jamMulai)
                 setJamBerakhir(response.data.data.jamBerakhir)
 
-                const getMataKuliah = await axios.get('http://34.192.213.125:8080/api/admin/mata_kuliah')
+                const getMataKuliah = await axios.get('http://18.210.63.173:8080/api/admin/mata_kuliah')
                 setMataKuliahList(getMataKuliah.data.data)
                 setMataKuliah(response.data.data.mataKuliah)
 
-                const getKelas = await axios.get('http://34.192.213.125:8080/api/admin/kelas')
+                const getKelas = await axios.get('http://18.210.63.173:8080/api/admin/kelas')
                 setKelasList(getKelas.data.data)
                 setKelas(response.data.data.kelas)
                 
-                const getProgramStudi = await axios.get('http://34.192.213.125:8080/api/admin/program_studi')
+                const getProgramStudi = await axios.get('http://18.210.63.173:8080/api/admin/program_studi')
                 setProgramStudiList(getProgramStudi.data.data)
                 setProgramStudi(response.data.data.programStudi)
 
@@ -57,7 +57,7 @@ function FormEditSetPresensi() {
     const updateSetPresensi = async(e) => {
         e.preventDefault()
         try {
-            await axios.put(`http://34.192.213.125:8080/api/admin/set_presensi/update/${id}`, {
+            await axios.put(`http://18.210.63.173:8080/api/admin/set_presensi/update/${id}`, {
                 tanggal : tanggal,
                 jamMulai : jamMulai,
                 jamBerakhir : jamBerakhir,

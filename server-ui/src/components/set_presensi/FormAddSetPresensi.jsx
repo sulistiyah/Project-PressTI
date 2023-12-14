@@ -26,15 +26,15 @@ function FormAddSetPresensi() {
         const fetchData = async () => {
             try {
                 // Fetch data for Program Studi
-                const responseProgramStudi = await axios.get('http://34.192.213.125:8080/api/admin/program_studi');
+                const responseProgramStudi = await axios.get('http://18.210.63.173:8080/api/admin/program_studi');
                 setProgramStudiList(responseProgramStudi.data.data);
     
                 // Fetch data for Kelas
-                const responseKelas = await axios.get('http://34.192.213.125:8080/api/admin/kelas');
+                const responseKelas = await axios.get('http://18.210.63.173:8080/api/admin/kelas');
                 setKelasList(responseKelas.data.data);
 
                 // Fetch data for Mata Kuliah
-                const responseMataKuliah = await axios.get('http://34.192.213.125:8080/api/admin/mata_kuliah');
+                const responseMataKuliah = await axios.get('http://18.210.63.173:8080/api/admin/mata_kuliah');
                 setMataKuliahList(responseMataKuliah.data.data);
 
             } catch (error) {
@@ -56,7 +56,7 @@ function FormAddSetPresensi() {
         e.preventDefault()
         try {
             // const formatJam = `${jamMulai.getHours()}:${jamMulai.getMinutes()}`;
-            await axios.post('http://34.192.213.125:8080/api/admin/set_presensi/create', {
+            await axios.post('http://18.210.63.173:8080/api/admin/set_presensi/create', {
                 tanggal : tanggal,
                 jamMulai : jamMulai,
                 jamBerakhir : jamBerakhir,

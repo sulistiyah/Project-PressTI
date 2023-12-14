@@ -16,15 +16,15 @@ function FormEditMataKuliah() {
     useEffect(() => {
         const getMataKuliahId = async() => {
             try {
-                const response = await axios.get(`http://34.192.213.125:8080/api/admin/mata_kuliah/${id}`)
+                const response = await axios.get(`http://18.210.63.173:8080/api/admin/mata_kuliah/${id}`)
                 setKodeMatkul(response.data.data.kodeMatkul)
                 setMataKuliah(response.data.data.mataKuliah)
                 
-                const getProgramStudi = await axios.get('http://34.192.213.125:8080/api/admin/program_studi')
+                const getProgramStudi = await axios.get('http://18.210.63.173:8080/api/admin/program_studi')
                 setProgramStudiList(getProgramStudi.data.data)
                 setProgramStudi(response.data.data.programStudi)
 
-                const getKelas = await axios.get('http://34.192.213.125:8080/api/admin/kelas')
+                const getKelas = await axios.get('http://18.210.63.173:8080/api/admin/kelas')
                 setKelasList(getKelas.data.data)
                 setKelas(response.data.data.kelas)
             }catch (error) {
@@ -40,7 +40,7 @@ function FormEditMataKuliah() {
     const updateMataKuliah = async(e) => {
         e.preventDefault()
         try {
-            await axios.put(`http://34.192.213.125:8080/api/admin/mata_Kuliah/update/${id}`, {
+            await axios.put(`http://18.210.63.173:8080/api/admin/mata_Kuliah/update/${id}`, {
                 kodeMatkul : kodeMatkul,
                 mataKuliah : mataKuliah,
                 programStudiId : programStudi,
