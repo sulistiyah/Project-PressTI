@@ -31,7 +31,6 @@ db.setPresensi = require("./set_presensi_model.js")(sequelizeDB, Sequelize)
 db.kehadiran = require("./kehadiran_model.js")(sequelizeDB, Sequelize)
 db.face = require("./face_model.js")(sequelizeDB, Sequelize)
 
-db.images = require("./image_model.js")(sequelizeDB, Sequelize)
 
 //Menyambungkan foreign key program studi ke kelas
 db.programStudi.hasMany(db.kelas, {as : "kelas"})
