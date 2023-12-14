@@ -17,6 +17,7 @@ function FormEditProgramStudi() {
                 setProgramStudi(response.data.data.programStudi)
             }catch (error) {
                 if(error.response) {
+                    console.log(error.response.data.message)
                     setMessage(error.response.data.message)
                 }
             }
@@ -30,7 +31,6 @@ function FormEditProgramStudi() {
             await axios.put(`http://18.210.63.173:8080/api/admin/program_studi/update/${id}`, {
                 kodeProdi : kodeProdi,
                 programStudi : programStudi
-                
             })
             
             navigate("/api/admin/program_studi")
